@@ -32,6 +32,13 @@ commands:
     workingDir: ${PROJECT_SOURCE}
   id: test
 components:
+- image:
+    dockerfile:
+      buildContext: .
+      rootRequired: false
+      uri: Dockerfile
+    imageName: nodejs-image:latest
+  name: image-build
 - container:
     args:
     - tail
